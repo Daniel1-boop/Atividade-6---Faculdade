@@ -1,0 +1,134 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#2b6cb0;
+  --danger:#d64545;
+  --muted:#666;
+  --radius:8px;
+  --gap:12px;
+  font-family: Inter, Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#222;
+  padding:20px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:980px;
+  margin:0 auto;
+}
+
+h1{margin:0 0 18px 0}
+h2{margin:0 0 8px 0;font-size:18px}
+
+.form-section, .table-section{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:16px;
+  margin-bottom:16px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+}
+
+label{
+  display:block;
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+input[type="text"]{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border:1px solid #dcdcdc;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.form-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+button{
+  padding:10px 14px;
+  border:0;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  background:var(--accent);
+  color:white;
+}
+
+button.secondary{
+  background:#6c757d;
+}
+
+button.small{
+  padding:6px 8px;
+  font-size:13px;
+}
+
+.error{color:var(--danger); margin-top:8px; font-size:13px}
+.info{color:var(--muted); margin-top:8px; font-size:13px}
+
+/* tabela */
+#table-wrap{overflow:auto}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+}
+thead th{
+  text-align:left;
+  padding:10px;
+  background:#f1f5f9;
+  font-size:13px;
+  border-bottom:1px solid #e6e6e6;
+}
+tbody td{
+  padding:10px;
+  border-bottom:1px solid #f2f2f2;
+  font-size:14px;
+  vertical-align:middle;
+}
+.actions{
+  display:flex;
+  gap:8px;
+}
+.btn-edit{
+  background:#38a169;
+  color:white;
+  border-radius:6px;
+  padding:6px 8px;
+  font-size:13px;
+}
+.btn-delete{
+  background:var(--danger);
+  color:white;
+  border-radius:6px;
+  padding:6px 8px;
+  font-size:13px;
+}
+
+/* responsivo */
+@media (max-width:700px){
+  .actions{flex-direction:column}
+  thead{display:none}
+  table, tbody, tr, td{display:block; width:100%}
+  tr{margin-bottom:12px; background:#fff; border-radius:6px; padding:10px}
+  td{padding:6px 0}
+  td:before{
+    content:attr(data-label);
+    display:block;
+    font-weight:600;
+    margin-bottom:4px;
+    color:#444;
+  }
+}
